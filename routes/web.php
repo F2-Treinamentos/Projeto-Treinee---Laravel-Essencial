@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelloWorldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ola-mundo-novo', function () {
-    return 'Ola mundo';
-})->name('ola-mundo');
+Route::get('/ola-mundo-novo', [HelloWorldController::class, 'olaMundo'])->name('ola-mundo');
 
 Route::get('/minha-tabela', function () {
     return view('tabela');
